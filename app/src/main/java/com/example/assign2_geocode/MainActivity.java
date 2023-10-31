@@ -66,7 +66,6 @@ public class MainActivity extends AppCompatActivity {
                     if (data != null) {
                         selectedFileUri = data.getData();
                         // Display the selected file's contents in the filePreview
-                        filePreview.setText("Loading...");
                         String fileContents = readCoordinatesFromFile(selectedFileUri).toString();
                         filePreview.setText(fileContents);
                     }
@@ -104,6 +103,7 @@ public class MainActivity extends AppCompatActivity {
         });
 
         convertButton.setOnClickListener(v -> {
+            addressPreview.setText("Loading...");
             if (ContextCompat.checkSelfPermission(MainActivity.this, Manifest.permission.ACCESS_FINE_LOCATION)
                     != PackageManager.PERMISSION_GRANTED) {
                 ActivityCompat.requestPermissions(MainActivity.this,
