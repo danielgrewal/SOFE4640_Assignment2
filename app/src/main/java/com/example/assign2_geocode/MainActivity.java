@@ -180,7 +180,6 @@ public class MainActivity extends AppCompatActivity {
                 Toast.makeText(MainActivity.this, "Please enter an address to query.", Toast.LENGTH_SHORT).show();
             }
         });
-
     }
 
     private String geocodeLatLng(LatLng latLng) {
@@ -244,24 +243,6 @@ public class MainActivity extends AppCompatActivity {
     private void queryDatabaseForLocation(String partialAddress) {
         SQLiteDatabase db = dbHelper.getReadableDatabase();
 
-//        String[] projection = {
-//                DatabaseHelper.COLUMN_LATITUDE,
-//                DatabaseHelper.COLUMN_LONGITUDE
-//        };
-//
-//        String selection = DatabaseHelper.COLUMN_ADDRESS + "=?";
-//        String[] selectionArgs = { address };
-//
-//        Cursor cursor = db.query(
-//                DatabaseHelper.TABLE_NAME,
-//                projection,
-//                selection,
-//                selectionArgs,
-//                null,
-//                null,
-//                null
-//        );
-
         String[] projection = {
                 DatabaseHelper.COLUMN_ADDRESS,
                 DatabaseHelper.COLUMN_LATITUDE,
@@ -301,18 +282,6 @@ public class MainActivity extends AppCompatActivity {
 
             // Display the results
             latlongResult.setText(resultBuilder.toString());
-//            int latitudeColumnIndex = cursor.getColumnIndex(DatabaseHelper.COLUMN_LATITUDE);
-//            int longitudeColumnIndex = cursor.getColumnIndex(DatabaseHelper.COLUMN_LONGITUDE);
-//
-//            double latitude = cursor.getDouble(latitudeColumnIndex);
-//            double longitude = cursor.getDouble(longitudeColumnIndex);
-////            double latitude = cursor.getDouble(cursor.getColumnIndex(DatabaseHelper.COLUMN_LATITUDE));
-////            double longitude = cursor.getDouble(cursor.getColumnIndex(DatabaseHelper.COLUMN_LONGITUDE));
-//            cursor.close();
-
-            // Display the latitude and longitude
-//            String result = "Latitude: " + latitude + "\nLongitude: " + longitude;
-//            latlongResult.setText(result);
         } else {
             // Address not found in the database
             latlongResult.setText("Address not found in the database.");
