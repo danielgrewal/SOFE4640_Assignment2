@@ -249,6 +249,8 @@ public class MainActivity extends AppCompatActivity {
                 DatabaseHelper.COLUMN_LONGITUDE
         };
 
+        // returns the query for address using LIKE
+        // in case user does not enter the address exactly
         String selection = DatabaseHelper.COLUMN_ADDRESS + " LIKE ?";
         String[] selectionArgs = new String[]{"%" + partialAddress + "%"};
 
