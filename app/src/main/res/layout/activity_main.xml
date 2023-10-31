@@ -1,0 +1,77 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/LinearLayout"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    android:padding="16dp"
+    tools:context=".MainActivity">
+
+    <TextView
+        android:id="@+id/databaseActivityTitle"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="@string/appTitle"
+        android:textAlignment="center"
+        android:textAppearance="@style/TextAppearance.AppCompat.Large"
+        android:textStyle="bold" />
+
+    <Button
+        android:id="@+id/fileButton"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:scrollbars="vertical"
+        android:text="@string/selectFileButton" />
+
+    <TextView
+        android:id="@+id/fileTextView"
+        android:layout_width="match_parent"
+        android:layout_height="80dp"
+        android:text="@string/fileContentsPreview" />
+
+    <Button
+        android:id="@+id/convertButton"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="@string/convertButton_label" />
+
+    <TextView
+        android:id="@+id/addressTextView"
+        android:layout_width="match_parent"
+        android:layout_height="160dp"
+        android:scrollbars="vertical"
+        android:text="@string/convertPreviewLabel" />
+
+    <EditText
+        android:id="@+id/addressTextInput"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:ems="10"
+        android:hint="@string/addressInputHint"
+        android:inputType="textPostalAddress" />
+
+    <Button
+        android:id="@+id/queryButton"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="@string/queryButton" />
+
+    <TextView
+        android:id="@+id/latlongTextView"
+        android:layout_width="match_parent"
+        android:layout_height="80dp"
+        android:text="@string/labelResultQuery" />
+
+    <Button
+        android:id="@+id/databaseButton"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="@string/buttonViewEditDelete" />
+
+    <TextView
+        android:id="@+id/infoStep4"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="@string/labelInstructionsForViewEditDelete" />
+</LinearLayout>

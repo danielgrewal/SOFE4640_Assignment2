@@ -1,0 +1,29 @@
+<resources>
+    <string name="app_name">Assign2_Geocode</string>
+    <string name="buttonNewEntry">Add A New Entry</string>
+    <string name="DatabaseActivity_title">View, Add, Delete and Update Entries</string>
+    <string name="DatabaseActivity_header">View, Add, Delete and Update Entries</string>
+    <string name="database_list_instructions">Select an entry to modify or delete it. Scroll down to see new entries at the bottom of the ListView.</string>
+    <string name="appTitle">My Geocode App</string>
+    <string name="selectFileButton">Step 1: Select Lat/Long File</string>
+    <string name="fileContentsPreview">Lat/Long coordinates file contents</string>
+    <string name="convertButton_label">Step 2: Get Addresses and Save To Database</string>
+    <string name="convertPreviewLabel">Results of converting lat/long into addresses using geocode intent</string>
+    <string name="addressInputHint">Enter an address to query DB for lat/long</string>
+    <string name="queryButton">Step 3: Query database for Lat/Long</string>
+    <string name="labelResultQuery">Result of address query to get lat/long in database</string>
+    <string name="buttonViewEditDelete">Step 4: View, Add, Delete and Update Entries</string>
+    <string name="labelInstructionsForViewEditDelete">Pressing this button will open a new activity where you can view the database records as a ListView. You can then select the row you wish to modify or delete. You can also add a new record if you wish.</string>
+    <string name="titleEditRecord">Modify or Delete Entry</string>
+    <string name="id_label">ID: -</string>
+    <string name="label_address">"ADDRESS: "</string>
+    <string name="hint_address">Example: 123 Simcoe St.</string>
+    <string name="label_latitude">Example: 43.9054</string>
+    <string name="label_long">"LONGITUDE: "</string>
+    <string name="hint_long">Example: -78.8401</string>
+    <string name="label_lat">"LATITUDE: "</string>
+    <string name="save_button">Save</string>
+    <string name="delete_button">Delete</string>
+    <string name="back_button">Go Back</string>
+    <string name="buttonBackToMain">Go Back</string>
+</resources>
