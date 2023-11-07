@@ -18,6 +18,7 @@ public class DatabaseHelper extends SQLiteOpenHelper {
         super(context, DATABASE_NAME, null, DATABASE_VERSION);
     }
 
+    // Create the table with these columns when the app loads (if it doesn't exist already)
     @Override
     public void onCreate(SQLiteDatabase db) {
         StringBuilder sql;

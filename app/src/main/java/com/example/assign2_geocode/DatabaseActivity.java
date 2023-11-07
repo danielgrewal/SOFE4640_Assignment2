@@ -25,6 +25,7 @@ public class DatabaseActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_database);
 
+        // Init components
         buttonNewEntry = findViewById(R.id.buttonNewEntry);
         buttonBackToMain = findViewById(R.id.buttonBackToMain);
         listViewRecords = findViewById(R.id.listViewRecords);
@@ -115,7 +116,6 @@ public class DatabaseActivity extends AppCompatActivity {
                     int longitudeColumnIndex = cursor.getColumnIndex(DatabaseHelper.COLUMN_LONGITUDE);
 
                     if (addressColumnIndex != -1 && latitudeColumnIndex != -1 && longitudeColumnIndex != -1) {
-                        //int id = cursor.getInt(idColumnIndex);
                         id = cursor.getInt(idColumnIndex);
                         String address = cursor.getString(addressColumnIndex);
                         double latitude = cursor.getDouble(latitudeColumnIndex);
@@ -144,7 +144,6 @@ public class DatabaseActivity extends AppCompatActivity {
 
     // Helper function to extract the ID from the selected record string
     private int extractRecordId(String selectedRecord) {
-        // This is a simple example; you should implement your own logic based on your record format
         String[] parts = selectedRecord.split("\n");
         if (parts.length > 0) {
             String idPart = parts[0].replace("ID: ", "");
@@ -152,6 +151,7 @@ public class DatabaseActivity extends AppCompatActivity {
                 return Integer.parseInt(idPart);
             } catch (NumberFormatException e) {
                 // Handle the conversion error
+                Log.e("Extract Record ID error", "Error when parsing ID from selected record string.");
             }
         }
         return -1; // Return a default value if ID extraction fails

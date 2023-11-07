@@ -25,10 +25,15 @@
         android:text="@string/selectFileButton" />
 
     <TextView
+        android:id="@+id/labelFile"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="@string/labelFile" />
+
+    <TextView
         android:id="@+id/fileTextView"
         android:layout_width="match_parent"
-        android:layout_height="80dp"
-        android:text="@string/fileContentsPreview" />
+        android:layout_height="70dp" />
 
     <Button
         android:id="@+id/convertButton"
@@ -37,11 +42,16 @@
         android:text="@string/convertButton_label" />
 
     <TextView
+        android:id="@+id/labelAddresses"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="@string/labelAddresses" />
+
+    <TextView
         android:id="@+id/addressTextView"
         android:layout_width="match_parent"
-        android:layout_height="160dp"
-        android:scrollbars="vertical"
-        android:text="@string/convertPreviewLabel" />
+        android:layout_height="150dp"
+        android:scrollbars="vertical" />
 
     <EditText
         android:id="@+id/addressTextInput"
@@ -58,10 +68,16 @@
         android:text="@string/queryButton" />
 
     <TextView
+        android:id="@+id/labelQuery"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="@string/labelResultQuery" />
+
+    <TextView
         android:id="@+id/latlongTextView"
         android:layout_width="match_parent"
         android:layout_height="80dp"
-        android:text="@string/labelResultQuery" />
+        android:scrollbars="vertical" />
 
     <Button
         android:id="@+id/databaseButton"

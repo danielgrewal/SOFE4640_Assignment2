@@ -81,7 +81,7 @@ public class MainActivity extends AppCompatActivity {
         // init the dbHelper instance
         dbHelper = new DatabaseHelper(this);
 
-        // init the componenets
+        // init the components
         fileButton = findViewById(R.id.fileButton);
         filePreview = findViewById(R.id.fileTextView);
         filePreview.setMovementMethod(new ScrollingMovementMethod());
@@ -102,8 +102,16 @@ public class MainActivity extends AppCompatActivity {
             filePickerLauncher.launch(intent);
         });
 
+        // click listener for the conversion button
+        // this will take the given lat/long file and convert into addresses using the geocode Android function
+        // using multithreading to keep UI responsive while file is being processed and written to database
+        // I was getting lots of time out errors in my android emulator because the UI was
+        // not responding after 5000 ms when processing the file etc.
+        // using multi-threading allows the UI thread to stay responsive while the file is being processed
         convertButton.setOnClickListener(v -> {
             addressPreview.setText("Loading...");
+
+            // check for location permissions required for GPS and geocoding in android
             if (ContextCompat.checkSelfPermission(MainActivity.this, Manifest.permission.ACCESS_FINE_LOCATION)
                     != PackageManager.PERMISSION_GRANTED) {
                 ActivityCompat.requestPermissions(MainActivity.this,
@@ -151,6 +159,7 @@ public class MainActivity extends AppCompatActivity {
                                             saveLocationToDatabase(address, latitude, longitude);
                                         } catch (NumberFormatException e) {
                                             // Handle invalid coordinates
+                                            Toast.makeText(MainActivity.this, "Invalid lat/long coordinates in file.", Toast.LENGTH_SHORT).show();
                                         }
                                     }
                                 }
@@ -165,12 +174,15 @@ public class MainActivity extends AppCompatActivity {
 
         // click listener for the add, delete and update entries button
         // opens a new activity where user can modify database entries
+        // or create a new entry
         databaseButton.setOnClickListener(v -> {
             // Create an Intent to start 'DatabaseActivity'
             Intent intent = new Intent(MainActivity.this, DatabaseActivity.class);
             startActivity(intent);
         });
 
+        // click listener for the button that will query db with the given address
+        // will return the lat/long if address is in database
         queryButton.setOnClickListener(v -> {
             String addressToQuery = addressInput.getText().toString().trim();
             if (!addressToQuery.isEmpty()) {
@@ -182,6 +194,7 @@ public class MainActivity extends AppCompatActivity {
         });
     }
 
+    // method that uses android geocoder to get address from given lat/long coordinates
     private String geocodeLatLng(LatLng latLng) {
         Geocoder geocoder = new Geocoder(this, Locale.getDefault());
         try {
@@ -228,7 +241,7 @@ public class MainActivity extends AppCompatActivity {
         }
     }
 
-    // Method to save location data to the database
+    // Method to save address location data to the database
     private void saveLocationToDatabase(String address, double latitude, double longitude) {
         SQLiteDatabase db = dbHelper.getWritableDatabase();
 
@@ -240,6 +253,7 @@ public class MainActivity extends AppCompatActivity {
         db.insert(DatabaseHelper.TABLE_NAME, null, values);
     }
 
+    // method for querying database for address given lat/long coordinates
     private void queryDatabaseForLocation(String partialAddress) {
         SQLiteDatabase db = dbHelper.getReadableDatabase();
 
@@ -251,6 +265,7 @@ public class MainActivity extends AppCompatActivity {
 
         // returns the query for address using LIKE
         // in case user does not enter the address exactly
+        // will return all matches that are close enough to the user query string
         String selection = DatabaseHelper.COLUMN_ADDRESS + " LIKE ?";
         String[] selectionArgs = new String[]{"%" + partialAddress + "%"};
 

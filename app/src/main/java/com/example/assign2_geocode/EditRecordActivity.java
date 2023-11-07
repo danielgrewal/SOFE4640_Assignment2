@@ -29,7 +29,7 @@ public class EditRecordActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_edit_record);
 
-        // Initialize the UI components
+        // Init components
         title = findViewById(R.id.titleEditRecord);
         idTextView = findViewById(R.id.textViewRecordId);
         addressEditText = findViewById(R.id.editTextAddress);
@@ -45,7 +45,7 @@ public class EditRecordActivity extends AppCompatActivity {
 
         // Retrieve the selected record's data from the intent extras
         Intent intent = getIntent();
-        //if (intent != null && intent.hasExtra("selectedRecord") && intent.hasExtra("recordId")) {
+
         if (intent != null) {
             recordId = intent.getIntExtra("recordId", -1);
             System.out.println("DEBUG EXISTING ENTRY id is - " + recordId);

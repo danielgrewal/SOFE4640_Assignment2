@@ -6,14 +6,13 @@
     <string name="database_list_instructions">Select an entry to modify or delete it. Scroll down to see new entries at the bottom of the ListView.</string>
     <string name="appTitle">My Geocode App</string>
     <string name="selectFileButton">Step 1: Select Lat/Long File</string>
-    <string name="fileContentsPreview">Lat/Long coordinates file contents</string>
     <string name="convertButton_label">Step 2: Get Addresses and Save To Database</string>
     <string name="convertPreviewLabel">Results of converting lat/long into addresses using geocode intent</string>
     <string name="addressInputHint">Enter an address to query DB for lat/long</string>
     <string name="queryButton">Step 3: Query database for Lat/Long</string>
-    <string name="labelResultQuery">Result of address query to get lat/long in database</string>
+    <string name="labelResultQuery">Query result from DB with lat/long using address:</string>
     <string name="buttonViewEditDelete">Step 4: View, Add, Delete and Update Entries</string>
-    <string name="labelInstructionsForViewEditDelete">Pressing this button will open a new activity where you can view the database records as a ListView. You can then select the row you wish to modify or delete. You can also add a new record if you wish.</string>
+    <string name="labelInstructionsForViewEditDelete">Pressing this button will open a new activity where you can view the database records as a ListView. You can then select the row you want to modify or delete. You can also add a new record here.</string>
     <string name="titleEditRecord">Modify or Delete Entry</string>
     <string name="id_label">ID: -</string>
     <string name="label_address">"ADDRESS: "</string>
@@ -26,4 +25,6 @@
     <string name="delete_button">Delete</string>
     <string name="back_button">Go Back</string>
     <string name="buttonBackToMain">Go Back</string>
+    <string name="labelFile">Lag/Long file contents (scroll to see all):</string>
+    <string name="labelAddresses">"Conversion from lat/long to address (scroll to see all): "</string>
 </resources>
