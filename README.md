@@ -7,10 +7,9 @@ Also please make sure you are running the app on a API level 34 device for prope
 
 Please use the provided "oshawa_lat_long_addresses.txt" file in the Canvas ZIP file submission as the test file. Or you can use your own file as long as it has this format:
 
-lat,long
-lat,long
-lat,long
-
-etc...
+lat,long<br>
+lat,long<br>
+lat,long<br>
+etc...<br>
 
 Every line must be a separate latitude,longitude pair
